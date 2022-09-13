@@ -1,3 +1,128 @@
 /* Create the entire interface with main >>HTML */
 /* Flex will be used to display a horizonatal display of the boxes */
-    /* each div from HTML in each section */
+/* each div from HTML in each section */
+.color-boxes {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 50%;
+  justify-content: center;
+}
+
+.swatch {
+  width: 200px;
+  height: 200px;
+  border: 4px solid #3d3d3d;
+  margin: auto;
+  border-radius: 4px;
+  margin: 0 12px;
+}
+
+.color-boxes > div > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  font-family: "Comic Neue", cursive;
+  display: flex;
+  margin: 0px;
+}
+
+main {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  border-left: 2px solid black;
+  height: 100vh;
+  width: 30vw;
+  overflow: scroll;
+}
+
+h1 {
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-weight: 500;
+  font-size: 104px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 64px;
+}
+
+#box1 {
+  background-color: rgb(255, 0, 0);
+}
+#box2 {
+  background-color: rgb(255, 102, 0);
+}
+#box3 {
+  background-color: rgb(255, 230, 0);
+}
+#box4 {
+  background-color: rgb(0, 76, 255);
+}
+#box5 {
+  background-color: rgb(68, 255, 0);
+}
+
+.defBtn {
+  border: 4px solid #3d3d3d;
+  padding: 8px;
+  font-size: 20px;
+  min-width: 200px;
+  cursor: pointer;
+  position: relative;
+  background: white;
+  box-shadow: 4px 4px 0px 0px #2d2d2d;
+  -webkit-box-shadow: 4px 4px 0px 0px #2d2d2d;
+  -moz-box-shadow: 4px 4px 0px 0px #2d2d2d;
+}
+
+button:hover {
+  transform: scale(0.99);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.palette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.palette > div {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #3d3d3d;
+  margin: 20px 8px;
+  border-radius: 4px;
+}
+
+.palette > button {
+  width: min-content;
+  height: min-content;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
