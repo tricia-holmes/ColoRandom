@@ -19,7 +19,7 @@ saveButton.addEventListener("click")
 
 
 
-
+//create a COLOR class
 class Color {
     constructor(){
         this.hexCode = this.makeRandomColor();
@@ -42,3 +42,21 @@ class Palette {
         this.ID = Date.now()
     }
 }
+
+
+//Jocelle Notes:
+       //for each.
+    //create different global variable that will include: 
+        //box, 
+        //hexcode 
+        //islocked.color
+    //how do we retain this colors in this box.
+//create Palette class
+    //create a new instance on palette when saving
+    //be able to load colors
+        //should have 5 colors
+        //should have unique ID
+        //replace colors with new colors.
+            //create a function with if statement (if locked)
+            //event clicker that will invoke a function 
+//Create Data Model
