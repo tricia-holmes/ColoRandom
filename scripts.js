@@ -60,3 +60,6 @@ class Palette {
             //create a function with if statement (if locked)
             //event clicker that will invoke a function 
 //Create Data Model
+    //variable to store saves
+    //var to create color palettes
+    
