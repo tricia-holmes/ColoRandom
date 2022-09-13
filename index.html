@@ -1,35 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-    <!-- create the entire Interface as a "MAIN" -->
-<body>
-    <header>COLORANDOM</header>
-    <section class="color-boxes">
+  </head>
+  <!-- create the entire Interface as a "MAIN" -->
+  <body>
+    <main>
+      <h1>COLORANDOM</h1>
+      <section class="color-boxes">
         <!-- create 5 boxes -->
-            <!-- assign a "random" color in HTML to interpolate in JS -->
-            <!-- CSS code will need flex that is horizontal -->
-        <div id="box1"></div> 
-        <div id="box2"></div>
-        <div id="box3"></div>
-        <div id="box4"></div>
-        <div id="box5"></div>
+        <!-- assign a "random" color in HTML to interpolate in JS -->
+        <!-- CSS code will need flex that is horizontal -->
+        <div>
+          <div class="swatch" id="box1"></div>
+          <p>
+            #111111<span class="material-symbols-outlined"> lock_open </span>
+          </p>
+        </div>
+        <div>
+          <div class="swatch" id="box2"></div>
+          <p>#222222<span class="material-symbols-outlined"> lock </span></p>
+        </div>
+        <div>
+          <div class="swatch" id="box3"></div>
+          <p>
+            #333333<span class="material-symbols-outlined"> lock_open </span>
+          </p>
+        </div>
+        <div>
+          <div class="swatch" id="box4"></div>
+          <p>#444444<span class="material-symbols-outlined"> lock </span></p>
+        </div>
+        <div>
+          <div class="swatch" id="box5"></div>
+          <p>
+            #555555<span class="material-symbols-outlined"> lock_open </span>
+          </p>
+        </div>
         <!-- hexcode numbers -->
         <!-- unlock emoji -->
-    </section>
-    <section class="buttons">
-        <button id="new">New Palette</button>
-        <button id="save">Save Palette</button>
-    </section>
-    <section class="saved-palettes">
-        <!-- later iteration -->
-        <h2>Saved Palettes</h2>
-    </section>
-<!-- add script for JS file -->
-</body>
+      </section>
+      <section class="buttons">
+        <button class="defBtn" id="new">New Palette</button>
+        <button class="defBtn" id="save">Save Palette</button>
+      </section>
+    </main>
+    <aside class="saved-palettes">
+      <h2>Saved Palettes</h2>
+      <section class="palette">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <button><span class="material-symbols-outlined"> delete </span></button>
+      </section>
+      <section class="palette">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <button><span class="material-symbols-outlined"> delete </span></button>
+      </section>
+      <section class="palette">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <button><span class="material-symbols-outlined"> delete </span></button>
+      </section>
+      <section class="palette">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <button><span class="material-symbols-outlined"> delete </span></button>
+      </section>
+      <section class="palette">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <button><span class="material-symbols-outlined"> delete </span></button>
+      </section>
+      <section class="palette">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <button><span class="material-symbols-outlined"> delete </span></button>
+      </section>
+    </aside>
+
+    <!-- later iteration -->
+    <!-- add script for JS file -->
+  </body>
 </html>
