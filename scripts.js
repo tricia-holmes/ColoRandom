@@ -19,11 +19,12 @@ var saveButton = document.querySelector("#save");
 // Event Listeners
 window.addEventListener("load", randomizeColorPalette);
 newButton.addEventListener("click", randomizeColorPalette);
-// saveButton.addEventListener("click", function-here) -> need to add function
+saveButton.addEventListener("click", savePalette);
 
 // Global Variables
 var currentPalette;
 var savedPalettes = [];
+var asideSection = document.querySelector(".palettes");
 
 // Event Handlers
 function randomizeColorPalette() {
@@ -36,4 +37,27 @@ function randomizeColorPalette() {
     hexes[i].innerText = color.hexCode;
     locks[i].innerText = color.isLocked ? "lock" : "lock_open";
   }
+}
+
+function savePalette() {
+  savedPalettes.push(currentPalette);
+  asideSection.innerHTML = "";
+  for (var i = 0; i < savedPalettes.length; i++) {
+    var colors = savedPalettes[i].colors;
+    createSection(colors);
+  }
+}
+function createSection(colors) {
+  var newElement = document.createElement("section");
+  newElement.classList.add("palette");
+
+  for (var i = 0; i < colors.length; i++) {
+    newElement.innerHTML += `
+      <div style = "background-color:${colors[i].hexCode}"></div>
+      `;
+    asideSection.appendChild(newElement);
+  }
+  newElement.innerHTML += `
+    <button><span class="material-symbols-outlined"> delete </span></button>
+    `;
 }
