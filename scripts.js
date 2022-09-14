@@ -21,8 +21,8 @@ window.addEventListener("load", createNewPalette);
 newButton.addEventListener("click", randomizeColorPalette);
 saveButton.addEventListener("click", savePalette);
 for (var i = 0; i < boxes.length; i++) {
-    boxes[i].addEventListener("dblclick", lockColor)
-} 
+  boxes[i].addEventListener("dblclick", lockColor);
+}
 
 // Global Variables
 var currentPalette;
@@ -38,14 +38,15 @@ function createNewPalette() {
 
   for (var i = 0; i < colors.length; i++) {
     var color = colors[i];
-    boxes[i].setAttribute("id", color.id)
+    boxes[i].setAttribute("id", color.id);
     boxes[i].style.backgroundColor = color.hexCode;
     hexes[i].innerText = color.hexCode;
+    locks[i].innerText = "lock_open";
   }
 }
 
 function randomizeColorPalette() {
-  currentPalette.refreshColors()
+  currentPalette.refreshColors();
 
   var colors = currentPalette.colors;
   for (var i = 0; i < colors.length; i++) {
@@ -56,13 +57,16 @@ function randomizeColorPalette() {
 }
 
 function lockColor(event) {
-    var boxId = event.target.id
-    for (var i = 0; i < currentPalette.colors.length; i++) {
-        if (boxId === currentPalette.colors[i].id) {
-        currentPalette.colors[i].isLocked = !currentPalette.colors[i].isLocked
-        console.log(currentPalette.colors[i].isLocked) 
-        }
+  var boxId = event.target.id;
+  for (var i = 0; i < currentPalette.colors.length; i++) {
+    console.log(boxId, currentPalette.colors[i].id);
+    if (boxId === currentPalette.colors[i].id) {
+      currentPalette.colors[i].isLocked = !currentPalette.colors[i].isLocked;
+      locks[i].innerText = currentPalette.colors[i].isLocked
+        ? "lock"
+        : "lock_open";
     }
+  }
 }
 
 function savePalette() {
@@ -87,7 +91,5 @@ function createSection(colors) {
     <button><span class="material-symbols-outlined"> delete </span></button>
     `;
 
-    createNewPalette()
-  }
-
-
+  createNewPalette();
+}
