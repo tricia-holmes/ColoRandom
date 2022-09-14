@@ -34,14 +34,17 @@ class Color {
   }
 
   refreshHexCode() {
-    if (!this.isLocked) {
+    if (this.isLocked = false) {
       this.hexCode = this.makeRandomColor();
     }
   }
 
   lockIconValue() {
-    return this.isLocked
-    ? "lock"
-    : "lock_open";
+    if(this.isLocked === true) {
+      return "lock"
+    } else {
+      return "lock_open"
+    }
   }
 }
+

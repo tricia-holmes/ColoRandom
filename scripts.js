@@ -16,6 +16,9 @@ var locks = document.querySelectorAll(".material-symbols-outlined");
 var newButton = document.querySelector("#new");
 var saveButton = document.querySelector("#save");
 
+// Side Display
+var asideSection = document.querySelector(".palettes");
+
 // Event Listeners
 window.addEventListener("load", createNewPalette);
 newButton.addEventListener("click", randomizeColorPalette);
@@ -27,10 +30,9 @@ for (var i = 0; i < boxes.length; i++) {
 // Global Variables
 var currentPalette;
 var savedPalettes = [];
-var asideSection = document.querySelector(".palettes");
+
 
 // Event Handlers
-
 function createNewPalette() {
   currentPalette = new Palette();
 
