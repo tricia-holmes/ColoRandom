@@ -1,6 +1,6 @@
 class Color {
   constructor() {
-    this.id = Math.floor(Math.random() * 10000)
+    this.id = 'Math.floor(Math.random() * 10000)'
     this.hexCode = this.makeRandomColor();
     this.isLocked = false;
   }

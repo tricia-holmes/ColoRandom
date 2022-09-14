@@ -20,6 +20,9 @@ var saveButton = document.querySelector("#save");
 window.addEventListener("load", createNewPalette);
 newButton.addEventListener("click", randomizeColorPalette);
 saveButton.addEventListener("click", savePalette);
+for (var i = 0; i < boxes.length; i++) {
+    boxes[i].addEventListener("dblclick", lockColor)
+} 
 
 // Global Variables
 var currentPalette;
@@ -52,6 +55,16 @@ function randomizeColorPalette() {
   }
 }
 
+function lockColor(event) {
+    var boxId = event.target.id
+    for (var i = 0; i < currentPalette.colors.length; i++) {
+        if (boxId === currentPalette.colors[i].id) {
+        currentPalette.colors[i].isLocked = !currentPalette.colors[i].isLocked
+        console.log(currentPalette.colors[i].isLocked) 
+        }
+    }
+}
+
 function savePalette() {
   savedPalettes.push(currentPalette);
   asideSection.innerHTML = "";
@@ -76,3 +89,5 @@ function createSection(colors) {
 
     createNewPalette()
   }
+
+
