@@ -21,7 +21,7 @@ window.addEventListener("load", createNewPalette);
 newButton.addEventListener("click", randomizeColorPalette);
 saveButton.addEventListener("click", savePalette);
 for (var i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener("dblclick", lockColor);
+  boxes[i].addEventListener("dblclick", toggleLock);
 }
 
 // Global Variables
@@ -56,7 +56,7 @@ function randomizeColorPalette() {
   }
 }
 
-function lockColor(event) {
+function toggleLock(event) {
   var boxId = event.target.id;
   var index = currentPalette.toggleColorLock(boxId)
   locks[index].innerText = currentPalette.colors[index].lockIconValue()
