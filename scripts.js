@@ -58,15 +58,8 @@ function randomizeColorPalette() {
 
 function lockColor(event) {
   var boxId = event.target.id;
-  for (var i = 0; i < currentPalette.colors.length; i++) {
-    console.log(boxId, currentPalette.colors[i].id);
-    if (boxId === currentPalette.colors[i].id) {
-      currentPalette.colors[i].isLocked = !currentPalette.colors[i].isLocked;
-      locks[i].innerText = currentPalette.colors[i].isLocked
-        ? "lock"
-        : "lock_open";
-    }
-  }
+  var index = currentPalette.toggleColorLock(boxId)
+  locks[index].innerText = currentPalette.colors[index].lockIconValue()
 }
 
 function savePalette() {

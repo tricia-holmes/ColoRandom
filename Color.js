@@ -38,4 +38,10 @@ class Color {
       this.hexCode = this.makeRandomColor();
     }
   }
+
+  lockIconValue() {
+    return this.isLocked
+    ? "lock"
+    : "lock_open";
+  }
 }
