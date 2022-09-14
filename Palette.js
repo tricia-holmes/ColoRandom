@@ -9,4 +9,9 @@ class Palette {
       new Color(),
     ];
   }
+  refreshColors() {
+    for (var i = 0; i < this.colors.length; i++) {
+      this.colors[i].refreshHexCode()
+    }
+  }
 }

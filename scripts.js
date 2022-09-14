@@ -17,7 +17,7 @@ var newButton = document.querySelector("#new");
 var saveButton = document.querySelector("#save");
 
 // Event Listeners
-window.addEventListener("load", randomizeColorPalette);
+window.addEventListener("load", createNewPalette);
 newButton.addEventListener("click", randomizeColorPalette);
 saveButton.addEventListener("click", savePalette);
 
@@ -27,15 +27,28 @@ var savedPalettes = [];
 var asideSection = document.querySelector(".palettes");
 
 // Event Handlers
-function randomizeColorPalette() {
+
+function createNewPalette() {
   currentPalette = new Palette();
+
+  var colors = currentPalette.colors;
+
+  for (var i = 0; i < colors.length; i++) {
+    var color = colors[i];
+    boxes[i].setAttribute("id", color.id)
+    boxes[i].style.backgroundColor = color.hexCode;
+    hexes[i].innerText = color.hexCode;
+  }
+}
+
+function randomizeColorPalette() {
+  currentPalette.refreshColors()
 
   var colors = currentPalette.colors;
   for (var i = 0; i < colors.length; i++) {
     var color = colors[i];
     boxes[i].style.backgroundColor = color.hexCode;
     hexes[i].innerText = color.hexCode;
-    locks[i].innerText = color.isLocked ? "lock" : "lock_open";
   }
 }
 
@@ -60,4 +73,6 @@ function createSection(colors) {
   newElement.innerHTML += `
     <button><span class="material-symbols-outlined"> delete </span></button>
     `;
-}
+
+    createNewPalette()
+  }
