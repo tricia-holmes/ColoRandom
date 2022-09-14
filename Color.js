@@ -1,5 +1,6 @@
 class Color {
   constructor() {
+    this.id = Math.floor(Math.random() * 10000)
     this.hexCode = this.makeRandomColor();
     this.isLocked = false;
   }
@@ -14,4 +15,10 @@ class Color {
         
     return hexCode
 	}
+
+  refreshHexCode() {
+    if (!this.isLocked) {
+      this.hexCode = this.makeRandomColor();
+    }
+  }
 }
