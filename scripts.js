@@ -12,6 +12,9 @@ var hexes = document.querySelectorAll(".box-details > p");
 // Selecting all the icon span with material-symbols-outlined class, instead of selecting each one separetly.
 var locks = document.querySelectorAll(".material-symbols-outlined");
 
+// delete query Selector
+savedPaletteSection = document.querySelector(".saved-palettes")
+
 // Buttons
 var newButton = document.querySelector("#new");
 var saveButton = document.querySelector("#save");
@@ -22,6 +25,14 @@ newButton.addEventListener("click", randomizeColorPalette);
 saveButton.addEventListener("click", savePalette);
 for (var i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener("dblclick", toggleLock);
+}
+savedPaletteSection.addEventListener("click", handleSavedPaletteSectionClick)
+
+//function for bubbling the event target
+function handleSavedPaletteSectionClick(event) {
+  if (event.target.className === "material-symbols-outlined") {
+    deletePalette(event)
+  }
 }
 
 // Global Variables
@@ -67,10 +78,11 @@ function savePalette() {
   asideSection.innerHTML = "";
   for (var i = 0; i < savedPalettes.length; i++) {
     var colors = savedPalettes[i].colors;
-    createSection(colors);
+    var paletteId = savedPalettes[i].id
+    createSection(colors, paletteId);
   }
 }
-function createSection(colors) {
+function createSection(colors, paletteId) {
   var newElement = document.createElement("section");
   newElement.classList.add("palette");
 
@@ -81,8 +93,23 @@ function createSection(colors) {
     asideSection.appendChild(newElement);
   }
   newElement.innerHTML += `
-    <button><span class="material-symbols-outlined"> delete </span></button>
-    `;
+  <button class="delete-button"><span class="material-symbols-outlined" id="${paletteId}"> delete </span></button>
+  `;
+
 
   createNewPalette();
 }
+
+// Delete Palette 
+
+function deletePalette(event){
+  event.preventDefault();
+  for (var i = 0; i < savedPalettes.length; i++) {
+    if (savedPalettes[i].id == event.target.id) {
+      savedPalettes.splice(i, 1);
+    };
+  };
+  
+  event.target.parentNode.parentNode.remove()
+  }
+
