@@ -1,6 +1,6 @@
 class Palette {
   constructor() {
-    this.id = Date.now();
+    this.id = Date.now().toString()
     this.colors = [
       new Color(),
       new Color(),
@@ -19,7 +19,7 @@ class Palette {
   toggleColorLock(boxId) {
     for (var i = 0; i < this.colors.length; i++) {
       if (boxId === this.colors[i].id) {
-        this.colors[i].isLocked = !this.colors[i].isLocked;
+        this.colors[i].isLocked = !this.colors[i].isLocked
         return i
       }
     }
