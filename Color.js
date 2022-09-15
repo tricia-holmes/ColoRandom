@@ -1,12 +1,12 @@
 class Color {
   constructor() {
-    this.id = Math.floor(Math.random() * 10000).toString();
-    this.hexCode = this.makeRandomColor();
-    this.isLocked = false;
+    this.id = Math.floor(Math.random() * 10000).toString()
+    this.hexCode = this.makeRandomColor()
+    this.isLocked = false
   }
 
   makeRandomColor() {
-    var hexCode = "#";
+    var hexCode = "#"
     var hexValues = [
       "A",
       "B",
@@ -27,21 +27,21 @@ class Color {
     ];
 
     for (var i = 0; i < 6; i++) {
-      hexCode += hexValues[Math.floor(Math.random() * hexValues.length)];
+      hexCode += hexValues[Math.floor(Math.random() * hexValues.length)]
     }
 
-    return hexCode;
+    return hexCode
   }
 
   refreshHexCode() {
     if (!this.isLocked) {
-      this.hexCode = this.makeRandomColor();
+      this.hexCode = this.makeRandomColor()
     }
   }
 
   lockIconValue() {
     return this.isLocked
     ? "lock"
-    : "lock_open";
+    : "lock_open"
   }
 }
