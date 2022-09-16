@@ -21,7 +21,7 @@ This project was a massive collective collaborative project, that all participan
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
 Jocelle Bautista: https://github.com/baut-jc<br>
-Dimitrii Gubko: https://github.com/dgubko<br>
+Dmitrii Gubko: https://github.com/dgubko<br>
 Tricia Holmes: https://github.com/tricia-holmes<br>
 Jordan Smith: https://github.com/jaysmith2022<br>
 
