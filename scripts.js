@@ -1,48 +1,33 @@
 // DOM Elements
-
-// Colors
-// Selecting all the color boxes with swatch class, instead of selecting each one separetly.
 var boxes = document.querySelectorAll(".swatch")
-
-// Hex codes
-// Selecting all the text with p tag inside the box-details class, instead of selecting each one separetly.
 var hexes = document.querySelectorAll(".box-details > p")
-
-// Locks
-// Selecting all the icon span with material-symbols-outlined class, instead of selecting each one separetly.
 var locks = document.querySelectorAll(".material-symbols-outlined")
+var newButton = document.querySelector("#new")
+var saveButton = document.querySelector("#save")
 
 // Side Display
 var asideSection = document.querySelector(".palettes")
 var savedPaletteSection = document.querySelector(".saved-palettes")
 
-// Buttons
-var newButton = document.querySelector("#new")
-var saveButton = document.querySelector("#save")
-
 // Event Listeners
 window.addEventListener("load", createNewPalette)
 newButton.addEventListener("click", randomizeColorPalette)
 saveButton.addEventListener("click", savePalette)
-for (var i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener("dblclick", toggleLock)
+  for (var i = 0; i < boxes.length; i++) {
+    boxes[i].addEventListener("click", toggleLock)
 }
 savedPaletteSection.addEventListener("click", handleSavedPaletteSectionClick)
 
-
 // Global Variables
-var currentPalette;
+var currentPalette
 var savedPalettes = []
 
 // Event Handlers
-
 function createNewPalette() {
   currentPalette = new Palette()
-  
-  var colors = currentPalette.colors;
-
+  var colors = currentPalette.colors
   for (var i = 0; i < colors.length; i++) {
-    var color = colors[i];
+    var color = colors[i]
     boxes[i].setAttribute("id", color.id)
     boxes[i].style.backgroundColor = color.hexCode
     hexes[i].innerText = color.hexCode
@@ -52,9 +37,7 @@ function createNewPalette() {
 
 function randomizeColorPalette() {
   currentPalette.refreshColors()
-  
   var colors = currentPalette.colors
-
   for (var i = 0; i < colors.length; i++) {
     var color = colors[i]
     boxes[i].style.backgroundColor = color.hexCode
@@ -77,39 +60,37 @@ function savePalette() {
     createSection(colors, paletteId)
   }
 }
+
 function createSection(colors, paletteId) {
   var newElement = document.createElement("section")
   newElement.classList.add("palette")
-  
   for (var i = 0; i < colors.length; i++) {
     newElement.innerHTML += `
-    <div style = "background-color:${colors[i].hexCode}"></div>
-    `;
+      <div style = "background-color:${colors[i].hexCode}"></div>`
     asideSection.appendChild(newElement)
   }
-  newElement.innerHTML += `
-  <button class="delete-button"><span class="material-symbols-outlined" id="${paletteId}"> delete </span></button>
-  `;
+    newElement.innerHTML += `
+      <button class="delete-button">
+         <span class="material-symbols-outlined" id="${paletteId}"> delete </span>
+      </button>`
   
   createNewPalette()
 }
 
-// function for bubbling the event target
+function deletePalette(event){
+  for (var i = 0; i < savedPalettes.length; i++) {
+    if (savedPalettes[i].id === event.target.id) {
+      savedPalettes.splice(i, 1)
+    }
+  }
+  event.target.parentNode.parentNode.remove()
+  }
+
 function handleSavedPaletteSectionClick(event) {
   if (event.target.className === "material-symbols-outlined") {
     deletePalette(event)
   }
 }
 
-// Delete Palette 
-function deletePalette(event){
-  event.preventDefault();
-  for (var i = 0; i < savedPalettes.length; i++) {
-    if (savedPalettes[i].id === event.target.id) {
-      savedPalettes.splice(i, 1)
-    }
-  }
-  
-  event.target.parentNode.parentNode.remove()
-  }
+
 
