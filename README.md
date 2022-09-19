@@ -6,13 +6,17 @@ Features added allows users to lock, delete, and create color palettes that can 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 1. Fork it.
-2. Clone it. Copy and paste the SSH.
+2. Clone it. Copy and paste the SSH
 3. Open in text editor
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-![Screen Shot 2022-09-16 at 4 23 44 PM](https://user-images.githubusercontent.com/109314475/190727064-4fcf9465-e75a-4a2a-b4f0-14135efeb489.png)
+
+
+https://user-images.githubusercontent.com/107894408/191114184-b3ae18f6-3bc4-498c-8be9-f64fbfa83351.mp4
+
+
 
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
