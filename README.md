@@ -1,12 +1,12 @@
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-We created a UserInterface(UI) that allows a user to customize and build color palettes.
+We created an application that allows a user to customize and build color palettes.
 Features added allows users to lock, delete, and create color palettes that can be saved and displayed on the UI.
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 1. Fork it.
-2. clone it. Copy and paste the SSH.
+2. Clone it. Copy and paste the SSH.
 3. Open in text editor
 
 ### Preview of App:
@@ -20,10 +20,11 @@ This project was a massive collective collaborative project, that all participan
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
-Jocelle Bautista: https://github.com/baut-jc<br>
-Dmitrii Gubko: https://github.com/dgubko<br>
-Tricia Holmes: https://github.com/tricia-holmes<br>
-Jordan Smith: https://github.com/jaysmith2022<br>
+
+[Jocelle Bautista](https://github.com/baut-jc)<br>
+[Dmitrii Gubko](https://github.com/dgubko)<br>
+[Tricia Holmes](https://github.com/tricia-holmes)<br>
+[Jordan Smith](https://github.com/jaysmith2022)<br>
 
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
