@@ -1,6 +1,6 @@
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-We created an application that allows a user to customize and build color palettes.
+We created a random palette generating application that allows a user to customize and build color palettes.
 Features added allows users to lock, delete, and create color palettes that can be saved and displayed on the UI.
 
 ### Installation Instructions:
@@ -8,6 +8,7 @@ Features added allows users to lock, delete, and create color palettes that can 
 1. Fork it.
 2. Clone it. Copy and paste the SSH
 3. Open in text editor
+4. Run open index.html in the terminal
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
